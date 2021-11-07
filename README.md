@@ -1,4 +1,4 @@
-# Image-assisted Vocab Flashcard Automation
+# Image-assisted Japanese-English Vocabulary Flashcard Automation
 ___
 ## Description
 
@@ -46,7 +46,12 @@ save the file once changes have been made and close it.
 
 5. Use the command line to run the 'image_vocab_2.py' script and use the edited
 'template_jmdict_indices.xlsx' spreadsheet as an argument. This will output a file called
-'templates_flashcards.xlsx'.
+'templates_flashcards.xlsx' with the following columns:
+* 'Text 1' - Japanese vocabulary of interest.
+* 'Text 2' - Kana reading of the word (if applicable).
+* 'Text 3' - English definition along with other useful word information.
+* 'Picture 1' - Image file name.
+* 'Text 4' - Colour-formatted kanji story mneumonics.
 
 ```
 ## ---- UNIX TERMINAL ---- ##
@@ -54,13 +59,16 @@ python3 image_vocab_2.py template_jmdict_indices.xlsx
 ```
 
 6. Copy the 'templates_flashcards.xlsx' spreadsheet and 'templates_flashcards.xlsx Media' folder
-into whatever directory you use to import data into [Flashcards Deluxe](https://orangeorapple.com/Flashcards/).
+into the same directory that you use to import data into [Flashcards Deluxe](https://orangeorapple.com/Flashcards/).
 
 ### data_prep.py
 Script used for converting much of the data from the
 [WWWJDIC online Japanese dictionary](http://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project)
-into Python dictionaries. This script also exports a json file called 'JMdict_filtered.json'
-which is imported in the main functions file 'image_vocab_functions.py'.
+into Python dictionaries. This script starts with the 
+["JMdict_e.gz"](http://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project) xml file, and sorts
+much of the relevant information we need into a json file called 'JMdict_filtered.json'.
+This json file is imported in the main functions file 'image_vocab_functions.py' and used for the
+English definition information in the flashcards.
 
 ### compress_images.py
 Compresses image files in "modify_dir" and outputs compressed image files to

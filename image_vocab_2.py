@@ -12,7 +12,7 @@ import os
 def main():
 	# Accept argument for vocab spreadsheet:
 	parser = argparse.ArgumentParser(description='vocabulary spreadsheet file')
-	parser.add_argument('spreadsheet', metavar='spreadsheet', type=str, help='enter your team')
+	parser.add_argument('spreadsheet', metavar='spreadsheet', type=str, help='enter spreadsheet filename ending with "_jmdict_indices.xlsx')
 	args = parser.parse_args()
 	second_spreadsheet = args.spreadsheet
 

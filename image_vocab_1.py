@@ -17,7 +17,7 @@ def main():
 
 	# Accept argument for vocab spreadsheet in the command line:
 	parser = argparse.ArgumentParser(description='vocabulary spreadsheet file')
-	parser.add_argument('spreadsheet', metavar='spreadsheet', type=str, help='enter your team')
+	parser.add_argument('spreadsheet', metavar='spreadsheet', type=str, help='enter vocab spreadsheet filename')
 	args = parser.parse_args()
 	spreadsheet_filename = args.spreadsheet
 
